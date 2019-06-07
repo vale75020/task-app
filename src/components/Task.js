@@ -7,18 +7,19 @@ const Container = styled.div`
   padding: 8px;
   border: 1px solid lightgrey;
   border-radius: 2px;
-  background-color: white;
+  background-color: ${props => (props.isDragging ? "lightgreen" : 'white')}; 
 `;
 
 export default class Task extends Component {
   render() {
     return (
       <Draggable draggableId={this.props.task.id} index={this.props.index}>
-          {provided => (
+          {(provided, snapshot) => (
         <Container
         {...provided.draggableProps}
         {...provided.dragHandleProps}
         ref={provided.innerRef}
+        isDragging={snapshot.isDragging} // to style my component when it drag
         >
         {this.props.task.content}
         </Container>
