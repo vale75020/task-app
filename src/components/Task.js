@@ -19,7 +19,6 @@ export default class Task extends Component {
         {...provided.draggableProps}
         {...provided.dragHandleProps}
         ref={provided.innerRef}
-        innerRef={provided.innerRef}
         >
         {this.props.task.content}
         </Container>
