@@ -16,6 +16,13 @@ const Container = styled.div`
 class App extends React.Component {
   state = initialData;
 
+  // onDragStart = start => {
+  //   const homeIndex = this.state.columnOrder.indexOf(start.source.droppableId);
+  //   this.setState({
+  //     homeIndex
+  //   })
+  // }
+
   onDragStart = () => {
     document.body.style.color = "orange"; // text color change when drag start
     document.body.style.transition = "background-color 0.2s ease;";
